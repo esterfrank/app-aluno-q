@@ -4,36 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="style.css" rel="stylesheet">
+
     <title>Login</title>
 </head>
 
 <body>
 
-    <div>
-        <p>
-            "Educação não é o aprendizado de fatos,
-            mas treinamento da mente para pensar."
-            <span>Albert Einstein</span>
-        </p>
-    </div>
+    <div class="container">
 
-    <div>
-        <h1>Bem-vindo de volta</h1>
-        <p>Por favor, insira suas credenciais para acessar seu painel acadêmico</p>
+        <div class="hero">
+            <p>
+                "Educação não é o aprendizado de fatos,
+                mas treinamento da mente para pensar."
+                <span>Albert Einstein</span>
+            </p>
+        </div>
 
-        <form action="/login" method="post">
-            <label for="email">Endereço de e-mail</label>
-            <input name="email" id="email" type="text" placeholder="user@email.com" />
+        <div class="formulario">
+            <div>
 
-            <label for="senha">Senha</label>
-            <a href="esqueceu.html">Esqueceu?</a>
-            <input name="senha" id="senha" type="password">
+                <h1>Bem-vindo de volta</h1>
+                <p>Por favor, insira suas credenciais para acessar seu painel acadêmico</p>
 
-            <button type="submit">Entrar</button>
+                <form action="/login" method="post">
 
-        </form>
+                    <label for="email">Endereço de e-mail</label>
+                    <input name="email" id="email" type="text" placeholder="user@email.com" />
 
-        <p>Não tem uma conta? <a href="registro.html">Registre-se agora.</a></p>
+                    <label for="senha">
+                        Senha 
+                        <a href="esqueceu.html">Esqueceu?</a>
+                    </label>
+                    <input name="senha" id="senha" type="password">
+
+                    <button type="submit">Entrar</button>
+
+                </form>
+
+                <p class="registre-se">Não tem uma conta? <a href="registro.html">Registre-se agora.</a></p>
+
+            </div>
+        </div>
+
     </div>
 
 </body>
