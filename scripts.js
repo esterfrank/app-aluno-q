@@ -49,13 +49,38 @@ progress[0].style.width = aulas.front + '%';
 progress[1].textContent = aulas.design + '%';
 progress[1].style.width = aulas.design + '%';
 
+
 /* botão exibir um alert('Alo!?') */
-const btn = document.querySelector('.card__button')
-btn.addEventListener('click', (event) => {
-    alert('Alo!? Botão ' + event.target.textContent);
-})
+// const btn = document.querySelector('.card__button')
+// btn.addEventListener('click', (event) => {
+//     alert('Alo!? Botão ' + event.target.textContent + 'foi clicado');
+// })
+
+/* botão alterar a % da barra de progresso */
+const disciplinas = document.querySelectorAll('.dashboard__container > .card')
+
+for (const d of disciplinas) {
+    const btn = d.querySelector('.card__button');
+    const progress = d.querySelector('.card__progress div')
+    btn.addEventListener('click', (event) => {
+        progress.textContent = 100 + '%';
+        progress.style.width = 100 + '%';
+    })
+}
+
 
 
 /* adicionar mais um card */
 
-/* botão alterar a % da barra de progresso */
+const modelo = document.querySelector('.card__group .card')
+const novo = modelo.cloneNode(true);
+
+const titulo = novo.querySelector('.card__badge');
+const texto = novo.querySelector('.card__title')
+titulo.textContent = 'Novo card';
+texto.id = 'novo';
+texto.textContent = '99';
+
+const group = document.querySelector('.card__group');
+group.appendChild(novo);
+
