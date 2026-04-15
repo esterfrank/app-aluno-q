@@ -84,3 +84,70 @@ texto.textContent = '99';
 const group = document.querySelector('.card__group');
 group.appendChild(novo);
 
+
+/*
+ fetch API
+*/
+
+fetch('https://jsonplaceholder.typicode.com/posts/1')
+.then(resposta => {
+    return resposta.json();
+})
+.then(dados => {
+    console.log(dados)
+})
+.catch(error => {
+    console.log('Ocorreu um erro: ', error)
+})
+
+
+
+/*
+ Async/Await
+*/
+
+const url = 'https://jsonplaceholder.typicode.com/posts/1';
+
+async function buscarDados() {
+    const resposta = await fetch(url);
+    const dados = await resposta.json();
+    console.log(dados);
+}
+
+buscarDados();
+
+async function buscarTitle() {
+    const resposta = await fetch(url);
+    const dados = await resposta.json();
+    return dados.title;
+}
+
+buscarTitle().then(title => {
+    console.log(title)
+});
+
+
+
+// Notification
+// Verifica se o navegador suporta a API de Notificação
+if ("Notification" in window) {
+  // Solicita permissão ao usuário para enviar notificações
+  Notification.requestPermission().then(permission => {
+    if (permission === "granted") {
+      // Se a permissão for concedida, cria uma nova notificação
+      const notificacao = new Notification("Título da Notificação", {
+        body: "Esta é a mensagem da notificação.",
+        icon: "https://placehold.co/64x64/0056b3/ffffff?text=JS"
+      });
+      
+      // Adiciona um evento de clique à notificação
+      notificacao.onclick = () => {
+        console.log("A notificação foi clicada!");
+      };
+    } else {
+      console.log("Permissão para notificações negada.");
+    }
+  });
+} else {
+  console.log("Este navegador não suporta a API de Notificação.");
+}
