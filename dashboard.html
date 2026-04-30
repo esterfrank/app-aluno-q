@@ -28,8 +28,9 @@
 
         <div class="welcome">
             <h2 id="greeting">
-                Boa noite, João
+                Boa noite, Estér
             </h2>
+            <p id="dataHoje"></p>
             <p>
                 Bem-vindo de volta a sua sessão de estudos focado.
                 Você tem 2 tarefas para essa semana
@@ -86,7 +87,7 @@
                     <h3 id="tarefas" class="card__title">
                         2
                     </h3>
-                    <p class="card__description">Próximo vencimento em 2 dias</p>
+                    <p id='textoVencimento' class="card__description">Próximo vencimento em 2 dias</p>
                 </div>
             </div>
 
@@ -106,6 +107,8 @@
 
     </div>
 
+    <script src="node_modules/moment/moment.js"></script>
+    <script src="node_modules/moment/locale/pt-br.js"></script>
     <script src="scripts.js"></script>
 
 </body>

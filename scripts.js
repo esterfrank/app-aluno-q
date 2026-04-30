@@ -1,5 +1,5 @@
 const pessoa = {
-    nome: ' Paulo',
+    nome: ' Estér Frank!',
     idade: 33,
     cidade: 'Criciúma'
 }
@@ -19,6 +19,31 @@ function getMsg(){
 
 const greeting = document.getElementById('greeting')
 greeting.textContent=`${getMsg()},${pessoa.nome}`;
+
+moment.locale('pt-br');
+const dataHoje = document.getElementById('dataHoje');
+dataHoje.textContent=moment().format('MMMM Do YYYY, h:mm:ss a');
+
+const dataVencimento = moment().add(5,'days');
+const diasRestantes = dataVencimento.diff(moment(),'days');
+const vencido = diasRestantes < 0;
+
+const elemento = document.getElementById('textoVencimento');
+
+let mensagem;
+
+if (vencido){
+  mensagem = 'Venceu ' + dataVencimento.fromNow(); //venceu a 5 dias
+  elemento.style.color = 'red';
+} else {
+  mensagem = 'Vence ' + dataVencimento.fromNow(); //vence em 5 dias
+  elemento.style.color = 'green';
+}
+
+elemento.textContent = mensagem;
+
+//mostrar quando dias esta vencido ou falta para vencer
+//dica: .fromNow() 
 
 /* 
 BANNERS INDICADORES (FÁCIL)
